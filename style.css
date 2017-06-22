@@ -524,13 +524,22 @@ a:active {
     transition: opacity, .5s;
 }
 
+.site-content,
+footer .widget {
+    padding: 0 0.5rem;
+}
+
+.home .site-content {
+    padding: 0;
+}
+
 article {
-    padding: 4rem 0.5rem;
+    padding: 4rem .5rem;
 }
 
 .widget,
 .post-navigation {
-    margin: 2rem 0.5rem;
+    margin: 2rem 0;
 }
 
 blockquote {
@@ -597,8 +606,7 @@ body#tinymce {
     margin: 1rem !important;
 }
 
-#masthead,
-.page-header {
+#masthead {
     padding: 0 .5rem;
 }
 
@@ -750,7 +758,7 @@ body#tinymce {
     padding: 0;
 }
 
-#post-6,
+.home #main article:first-child,
 #panel1,
 #panel2 {
     min-height: 100vh;
@@ -854,18 +862,23 @@ body#tinymce {
         padding: 0 1.25rem;
     }
     
+    .site-content,
+    footer .widget {
+        padding: 0 2rem;
+    }
+    
     article,
     .search-no-results .site-main {
+        padding: 4rem 0;
+    }
+    
+    .home article {
         padding: 4rem 2rem;
     }
     
     .widget,
     .post-navigation {
-        margin: 2rem;
-    }
-    
-    .page-header {
-        padding: 0 2rem;
+        margin: 2rem 0;
     }
     
 }
@@ -882,18 +895,23 @@ body#tinymce {
         padding: 0 2.25rem;
     }
     
+    .site-content,
+    footer .widget {
+        padding: 0 2.75rem;
+    }
+    
     article {
-        padding: 4rem 2.75rem;
+        padding: 4rem 0;
     }
     
     .widget,
     .post-navigation,
     .search-no-results .site-main {
-        margin: 2.75rem;
+        margin: 2.75rem 0;
     }
     
-    .page-header {
-        padding: 0 2.75rem;
+    .home article {
+        padding: 4rem 2.75rem;
     }
     
     .site-title img {
@@ -917,18 +935,22 @@ body#tinymce {
     
     article,
     #masthead,
-    .search-no-results .site-main {
+    .home article {
         padding: 4rem 3.5rem;
     }
     
-    .post-navigation {
-        margin: 0 3.5rem;   
+    .site-content {
+        padding: 0 3.5rem;
     }
     
     .widget-area {
         display: flex;
         flex-flow: row wrap;
-        margin: 2rem;
+        margin: 2rem 0;
+    }
+    
+    footer .widget-area {
+        margin: 0 3.5rem;
     }
     
     .widget {
@@ -938,12 +960,21 @@ body#tinymce {
         padding: 1.5rem;
     }
     
-    .page-header {
-        padding: 0 3.5rem;
+    .widget:nth-of-type(odd) {
+        padding: 1.5rem 1.5rem 1.5rem 0;
+    }
+    
+    .widget:nth-of-type(even) {
+        padding: 1.5rem 0 1.5rem 1.5rem;
     }
     
     #masthead {
         padding-top: 0;
+    }
+    
+    .home #main article:first-child {
+        padding-top: 2rem;
+        min-height: calc(100vh - 8rem);
     }
     
     #panel1,
@@ -970,15 +1001,13 @@ body#tinymce {
 
 @media screen and (min-width: 47rem) {
     
-    article,
-    #masthead,
-    .search-no-results .site-main {
-        padding: 4rem 3.5rem;
+    #masthead {
+        padding-bottom: 0;
     }
     
-    #masthead,
-    .page-header {
-        padding: 0 3.5rem;
+    .home #main article:first-child {
+        padding-top: 2rem;
+        min-height: calc(100vh - 4rem);
     }
     
 }
@@ -986,11 +1015,8 @@ body#tinymce {
 
 @media screen and (min-width: 64rem) {
     
-    article,
     #masthead,
-    .page-header,
-    .post-navigation,
-    .search-no-results .site-main {
+    .site-content-contain {
         text-align: center;
         width: 100%;
         padding: 0;
@@ -1002,11 +1028,8 @@ body#tinymce {
         padding: 4rem 0 !important;
     }
     
-    article > *,
-    .page-header > *,
-    .post-navigation .nav-links,
-    .search-no-results .site-main > * {
-        max-width: 40rem;
+    .site-content {
+        max-width: 47rem;
         text-align: left;
         margin: 0 auto;
         box-sizing: border-box;
@@ -1070,15 +1093,25 @@ body#tinymce {
     }
     
     .widget-area {
-        width: 43rem;
         margin: 0 auto;
         justify-content: center;
     }
     
-    #post-6 .panel-content {
+    .widget {
+        padding: 1.5rem !important;
+    }
+    
+    .home .site-content {
+        max-width: 100%;
+    }
+    
+    .home #main article:first-child .panel-content{
         max-width: 30rem;
         position: relative;
         right: 5rem;
+        text-align: left;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
     
     #panel1 .panel-content,
@@ -1087,6 +1120,9 @@ body#tinymce {
         background: url(assets/images/section-2.svg) no-repeat 0 2rem #2a2a2a;
         background-size: 6.5rem auto; 
         padding: 2rem 0 2rem 8.5rem !important;
+        text-align: left;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
     
     #panel2 .panel-content {
