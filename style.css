@@ -1152,7 +1152,7 @@ body#tinymce {
         height: 3rem;
     }
 
-    #post-6, 
+    .home #main article:first-child, 
     #panel1, 
     #panel2 {
         display: block;
